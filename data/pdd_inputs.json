@@ -1,0 +1,12 @@
+[
+{"key":"dry_feedstock","parameter":"Dry feedstock input","value":22300,"unit":"t/yr","basis":"PFS design, PDD §1.13"},
+{"key":"biochar_total","parameter":"Biochar production","value":6000,"unit":"t/yr","basis":"PFS design, PDD §1.13"},
+{"key":"biochar_soil","parameter":"Soil-applied biochar (creditable)","value":4500,"unit":"t/yr","basis":"75% of production, PDD §1.1"},
+{"key":"biochar_fuel","parameter":"Fuel/industrial biochar (not credited)","value":1500,"unit":"t/yr","basis":"25% of production, PDD §1.1"},
+{"key":"corg","parameter":"Organic carbon content (Corg)","value":0.80,"unit":"fraction, dry","basis":"PFS assumption, not yet measured, PDD §4.4"},
+{"key":"pf","parameter":"Permanence fraction","value":0.89,"unit":"fraction","basis":"PFS assumption, PDD §4.4"},
+{"key":"pe_share","parameter":"Project-emission deduction","value":0.15,"unit":"share of gross","basis":"PFS engineering assumption, PDD §4.2"},
+{"key":"pfs_net","parameter":"PFS stated net removals","value":10000,"unit":"tCO2e/yr","basis":"Rounded PFS figure, PDD §4.5"},
+{"key":"kilns","parameter":"Yamasen kilns","value":20,"unit":"kilns","basis":"PDD §1.1"},
+{"key":"jobs","parameter":"Permanent jobs","value":27,"unit":"positions","basis":"PDD §1.18"}
+]

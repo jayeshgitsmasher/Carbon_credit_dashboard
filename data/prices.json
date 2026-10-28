@@ -1,0 +1,8 @@
+[
+{"key":"cdrfyi_avg","benchmark":"CDR.fyi weighted average, biochar","low":136,"high":null,"currency":"USD","as_of":"2026"},
+{"key":"puro_jun","benchmark":"Puro.earth / Nasdaq CORCCHAR index","low":120.67,"high":null,"currency":"EUR","as_of":"Jun 2026"},
+{"key":"puro_aug","benchmark":"Puro.earth biochar index","low":135,"high":null,"currency":"EUR","as_of":"Aug 2026"},
+{"key":"breakeven","benchmark":"Supplier breakeven (CDR.fyi x OPIS)","low":143,"high":null,"currency":"USD","as_of":"2025"},
+{"key":"artisanal","benchmark":"Artisanal biochar range","low":100,"high":150,"currency":"EUR","as_of":"2026"},
+{"key":"global_south","benchmark":"Global South industrial range","low":150,"high":200,"currency":"EUR","as_of":"2026"}
+]

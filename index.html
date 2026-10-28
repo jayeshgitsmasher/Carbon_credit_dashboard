@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IKH MORIG Carbon Credits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true"></span>IKH MORIG <span class="brand-sub">Carbon</span></a>
+    <ul class="nav-links">
+      <li><a href="#overview" data-nav="overview">Overview</a></li>
+      <li><a href="#method" data-nav="method">Method</a></li>
+      <li><a href="#calculator" data-nav="calculator">Calculator</a></li>
+      <li><a href="#drivers" data-nav="drivers">Drivers</a></li>
+      <li><a href="#compare" data-nav="compare">Compare</a></li>
+      <li><a href="#gaps" data-nav="gaps">Open items</a></li>
+    </ul>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="overview">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="dot-live" aria-hidden="true"></span>VM0044 v1.2 · Khongor soum, Darkhan-Uul, Mongolia · Internal draft</p>
+    <h1 class="hero-title">Farm waste in. <em>Durable carbon</em> out.</h1>
+    <div class="hero-big">
+      <span class="hero-num" data-count="base.net" data-fmt="int">9,986</span>
+      <span class="hero-unit">carbon credits<br>per year</span>
+    </div>
+    <p class="hero-sub">Twenty Yamasen kilns turn 22,300 t of manure, straw and wood residue into biochar each year. The share that goes into soil locks carbon away for centuries. One credit is one tonne of CO₂ removed.</p>
+    <dl class="hero-stats">
+      <div><dt>Gross removal</dt><dd><span data-count="base.gross" data-fmt="int">11,748</span><small>tCO₂e/yr</small></dd></div>
+      <div><dt>Durable carbon</dt><dd><span data-count="base.durable_c" data-fmt="int">3,204</span><small>t C/yr</small></dd></div>
+      <div><dt>Removal factor</dt><dd><span data-count="base.net_per_t_soil" data-fmt="dec2">2.22</span><small>t CO₂e per t biochar</small></dd></div>
+      <div><dt>Credit value</dt><dd><span data-count="base.value" data-fmt="usdc">$1.36M</span><small>per year at $<span data-bind="base.price" data-fmt="int">136</span>/t</small></dd></div>
+    </dl>
+    <a class="hero-cta" href="#calculator">Try your own assumptions <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="hero-soil" aria-hidden="true"></div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="method">
+    <div class="section-head reveal">
+      <p class="kicker">01 · Method</p>
+      <h2>How a tonne of straw becomes a credit</h2>
+      <p class="lead">VM0044 credits only the organic carbon in biochar that goes into soil and stays there. Each step uses the PDD's pre-feasibility inputs.</p>
+    </div>
+    <ol class="flow reveal">
+      <li class="flow-step">
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18c3-6 6-9 8-12M9 18c2-4 4-7 6-9M14 18c1.5-3 3-5 6-7"/></svg></span>
+        <span class="flow-op">Input</span>
+        <span class="flow-val" data-count="base.dry_feedstock" data-fmt="int">22,300</span>
+        <span class="flow-unit">t dry feedstock</span>
+      </li>
+      <li class="flow-step">
+        <span class="flow-icon ember" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-7 1.5 1 2.5 2.5 3 4 .5-2.5 0-5 0-7z"/></svg></span>
+        <span class="flow-op">× <span data-bind="base.yield" data-fmt="pct1">26.9%</span> yield</span>
+        <span class="flow-val" data-count="base.biochar_total" data-fmt="int">6,000</span>
+        <span class="flow-unit">t biochar produced</span>
+      </li>
+      <li class="flow-step">
+        <span class="flow-icon soil" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15h18M5 19h14M12 4v8M8.5 8.5 12 12l3.5-3.5"/></svg></span>
+        <span class="flow-op">− <span data-bind="base.biochar_fuel" data-fmt="int">1,500</span> t to fuel</span>
+        <span class="flow-val" data-count="base.biochar_soil" data-fmt="int">4,500</span>
+        <span class="flow-unit">t applied to soil</span>
+      </li>
+      <li class="flow-step">
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="7" r="1.6"/><circle cx="19" cy="7" r="1.6"/><circle cx="12" cy="20" r="1.6"/><path d="M6.4 7.8 9.4 10.5M17.6 7.8l-3 2.7M12 15v3.4"/></svg></span>
+        <span class="flow-op">× <span data-bind="base.corg" data-fmt="pct">80%</span> Corg</span>
+        <span class="flow-val" data-count="base.corg_t" data-fmt="int">3,600</span>
+        <span class="flow-unit">t organic carbon</span>
+      </li>
+      <li class="flow-step">
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+        <span class="flow-op">× <span data-bind="base.pf" data-fmt="dec2">0.89</span> permanence</span>
+        <span class="flow-val" data-count="base.durable_c" data-fmt="int">3,204</span>
+        <span class="flow-unit">t durable carbon</span>
+      </li>
+      <li class="flow-step">
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><circle cx="4.5" cy="12" r="2.2"/><circle cx="19.5" cy="12" r="2.2"/><path d="M6.7 12h2.1M15.2 12h2.1"/></svg></span>
+        <span class="flow-op">× 44/12 C → CO₂</span>
+        <span class="flow-val" data-count="base.gross" data-fmt="int">11,748</span>
+        <span class="flow-unit">tCO₂e gross</span>
+      </li>
+      <li class="flow-step final">
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+        <span class="flow-op">− <span data-bind="base.pe_share" data-fmt="pct">15%</span> project emissions</span>
+        <span class="flow-val" data-count="base.net" data-fmt="int">9,986</span>
+        <span class="flow-unit">tCO₂e net credits</span>
+      </li>
+    </ol>
+    <div class="formula reveal">
+      <span class="formula-label">Formula</span>
+      <code>Net credits = M<sub>soil</sub> × C<sub>org</sub> × PF × 44/12 × (1 − project emissions) − leakage − buffer</code>
+    </div>
+    <p class="note reveal">Leakage and any buffer are TBD in the PDD and set to zero here. The 1,500 t/yr fuel stream is produced but not credited.</p>
+  </section>
+
+  <section class="section" id="calculator">
+    <div class="section-head reveal">
+      <p class="kicker">02 · Calculator</p>
+      <h2>Test the assumptions the PDD still has to confirm</h2>
+      <p class="lead">Pick a scenario or move the sliders. Everything below updates as you drag.</p>
+    </div>
+
+    <div class="presets reveal" role="group" aria-label="Scenario presets">
+      <button type="button" class="chip" data-preset="base" aria-pressed="true">PDD base case</button>
+      <button type="button" class="chip" data-preset="conservative" aria-pressed="false">Conservative</button>
+      <button type="button" class="chip" data-preset="methane" aria-pressed="false">High kiln methane</button>
+      <button type="button" class="chip" data-preset="allsoil" aria-pressed="false">All biochar to soil</button>
+      <button type="button" class="chip" data-preset="optimistic" aria-pressed="false">Optimistic</button>
+    </div>
+
+    <div class="calc reveal">
+      <div class="panel controls">
+        <div class="ctrl-group">
+          <p class="ctrl-group-title">Production</p>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-soil">Soil-applied biochar</label><output data-sv="soil">4,500 t/yr</output></div>
+            <input id="s-soil" class="slider" type="range" data-param="soil" min="0" max="6000" step="100">
+            <p class="hint">The maximum sends all 6,000 t, including the fuel stream, to soil.</p>
+          </div>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-corg">Organic carbon (Corg)</label><output data-sv="corg">80%</output></div>
+            <input id="s-corg" class="slider" type="range" data-param="corg" min="40" max="90" step="1">
+            <p class="hint">Needs lab tests on Darkhan biochar. Manure chars often run lower.</p>
+          </div>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-pf">Permanence factor</label><output data-sv="pf">0.89</output></div>
+            <input id="s-pf" class="slider" type="range" data-param="pf" min="0.5" max="0.95" step="0.01">
+            <p class="hint">Set by H:Corg and soil temperature in VM0044.</p>
+          </div>
+        </div>
+        <div class="ctrl-group">
+          <p class="ctrl-group-title">Deductions</p>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-pe">Project emissions</label><output data-sv="pe">15%</output></div>
+            <input id="s-pe" class="slider ember" type="range" data-param="pe" min="0" max="40" step="1">
+            <p class="hint">Open-kiln methane is the big unknown. Measure flue gas over a full cycle.</p>
+          </div>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-leak">Leakage</label><output data-sv="leak">0%</output></div>
+            <input id="s-leak" class="slider ember" type="range" data-param="leak" min="0" max="15" step="1">
+            <p class="hint">Feedstock diversion and competing use, as a share of gross.</p>
+          </div>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-buffer">Buffer or uncertainty</label><output data-sv="buffer">0%</output></div>
+            <input id="s-buffer" class="slider ember" type="range" data-param="buffer" min="0" max="20" step="1">
+            <p class="hint">TBD in the PDD pending VCS non-permanence rules.</p>
+          </div>
+        </div>
+        <div class="ctrl-group">
+          <p class="ctrl-group-title">Market</p>
+          <div class="ctrl">
+            <div class="ctrl-row"><label for="s-price">Credit price</label><output data-sv="price">$136/t</output></div>
+            <input id="s-price" class="slider" type="range" data-param="price" min="50" max="250" step="1">
+            <p class="hint">2026 benchmarks run from about $120 to $200. See Compare.</p>
+          </div>
+        </div>
+        <button class="btn-ghost reset" type="button">↺ Reset to PDD values</button>
+      </div>
+
+      <div class="outputs">
+        <div class="panel gauge-card">
+          <div class="gauge" data-chart="gauge">
+            <div class="gauge-center">
+              <span class="gauge-num" data-sc="net">9,986</span>
+              <span class="gauge-unit">net credits / yr</span>
+              <span class="gauge-share" data-sc="share">85% of gross</span>
+            </div>
+          </div>
+          <div class="gauge-side">
+            <div class="mini"><span class="mini-lbl">Revenue per year</span><span class="mini-num" data-sc="revenue">$1.36M</span></div>
+            <div class="mini"><span class="mini-lbl">Credits over 10 years</span><span class="mini-num" data-sc="total10">88,374</span><span class="mini-unit">with sample ramp-up</span></div>
+            <div class="mini"><span class="mini-lbl">Change from PDD base</span><span class="mini-num delta" data-sc="delta">+0</span><span class="mini-unit">tCO₂e per year</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="card-head">
+            <h3>From gross removal to issued credits</h3>
+            <ul class="legend"><li><span class="sw sw-carbon"></span>Removal</li><li><span class="sw sw-ember"></span>Deduction</li></ul>
+          </div>
+          <div class="chart" data-chart="waterfall"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel reveal">
+      <div class="card-head">
+        <h3>10-year crediting projection</h3>
+        <p class="note">Year 1 runs the first kiln tranche and year 2 the build-out. This ramp-up is a sample; the PDD leaves dates TBD.</p>
+      </div>
+      <div class="chart" data-chart="projection"></div>
+    </div>
+  </section>
+
+  <section class="section" id="drivers">
+    <div class="section-head reveal">
+      <p class="kicker">03 · Drivers</p>
+      <h2>What moves the number most</h2>
+      <p class="lead">How much biochar reaches soil matters most, then the permanence factor. Methane and carbon content still need measuring.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel reveal">
+        <div class="card-head">
+          <h3>Sensitivity of net credits per year</h3>
+          <ul class="legend"><li><span class="sw sw-ember"></span>Lower end</li><li><span class="sw sw-carbon"></span>Upper end</li><li><span class="sw sw-ref"></span>Base case</li></ul>
+        </div>
+        <div class="chart" data-chart="tornado"></div>
+      </div>
+      <div class="panel reveal">
+        <div class="card-head">
+          <h3>Feedstock mix</h3>
+          <p class="note">Dry tonnes per year. Straw removal is capped at 40% of field residue.</p>
+        </div>
+        <div class="donut-wrap">
+          <div class="chart donut" data-chart="donut">
+            <div class="donut-center"><span class="donut-num" data-count="base.dry_feedstock" data-fmt="int">22,300</span><span class="donut-unit">t dry / yr</span></div>
+          </div>
+          <ul class="donut-legend" data-legend="feedstock"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <div class="section-head reveal">
+      <p class="kicker">04 · Compare</p>
+      <h2>How IKH MORIG stacks up</h2>
+      <p class="lead">Net removal per tonne of biochar, against producers audited on Puro.earth, plus the market it would sell into.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel reveal">
+        <div class="card-head">
+          <h3>Net tCO₂e per tonne of biochar</h3>
+          <p class="note">The dashed line is the audited median of <b data-bind="bench_stats.median" data-fmt="dec2">2.52</b>.</p>
+        </div>
+        <div class="chart" data-chart="bench"></div>
+      </div>
+      <div class="stack reveal">
+        <div class="panel">
+          <div class="card-head">
+            <h3>Large biochar offtake deals</h3>
+            <p class="note">One IKH MORIG year is about <b data-bind="base.net" data-fmt="int">9,986</b> credits.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Deal</th><th>Supplier in</th><th class="r">Volume (t)</th><th class="r">Per year (t)</th><th>Announced</th></tr></thead>
+              <tbody id="deals-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="card-head"><h3>Credit price benchmarks</h3></div>
+          <div class="price-bars" id="price-bars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gaps">
+    <div class="section-head reveal">
+      <p class="kicker">05 · Open items</p>
+      <h2>What has to be proven before validation</h2>
+      <p class="lead">From the PDD's Appendix 3. Each one can change the credit volume or block registration.</p>
+    </div>
+    <ul class="gaps">
+      <li class="gap reveal"><span class="pill hi">Volume</span><h4>Process methane</h4><p>Replace the 15% deduction with direct flue-gas measurement over a full carbonisation cycle.</p></li>
+      <li class="gap reveal"><span class="pill hi">Volume</span><h4>Corg and H:Corg</h4><p>Lab-test representative Darkhan biochar. These set carbon content and the permanence factor.</p></li>
+      <li class="gap reveal"><span class="pill hi">Volume</span><h4>Soil offtake</h4><p>Secure buyers and application sites for 4,500 t/yr. Only soil-applied biochar is credited.</p></li>
+      <li class="gap reveal"><span class="pill hi">Volume</span><h4>Feedstock supply</h4><p>Survey herd numbers, straw availability and farm-gate price. Evidence the 40% straw cap.</p></li>
+      <li class="gap reveal"><span class="pill md">Eligibility</span><h4>Feedstock eligibility and leakage</h4><p>Show each stream is waste biomass with no material competing use.</p></li>
+      <li class="gap reveal"><span class="pill md">Eligibility</span><h4>Additionality</h4><p>Build the VM0044 v1.2 investment analysis from verified CAPEX, OPEX and revenue.</p></li>
+      <li class="gap reveal"><span class="pill lo">Registration</span><h4>Dates, site and permits</h4><p>Project start, crediting period, coordinates, permit register and land rights.</p></li>
+      <li class="gap reveal"><span class="pill lo">Registration</span><h4>Stakeholders and carbon rights</h4><p>Consultation, FPIC, a grievance procedure, and JCM versus VCS for each tonne.</p></li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>Sources: IKH_MORIG_VCS_PDD_Draft_v01 (15 Aug 2026 working draft). Removal factors from Puro.earth producer audit statements, read as tCO₂e per tonne of dry biochar. Prices from CDR.fyi, Puro.earth/Nasdaq and Senken. Offtakes from S&amp;P Global, TechCrunch and the International Biochar Initiative.</p>
+    <p>Pre-feasibility estimate for internal review. Not a validated VCS calculation.</p>
+  </footer>
+</main>
+
+<div class="tip" hidden></div>
+
+<script src="vendor/d3.v7.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
